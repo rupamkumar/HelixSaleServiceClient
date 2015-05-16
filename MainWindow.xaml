@@ -1,0 +1,41 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="HelixSaleServiceClient.MainWindow"
+        Title="MainWindow" Width="790" d:DesignHeight="300" >
+    <Grid >
+        <Grid.RowDefinitions >
+            <RowDefinition Height="350"/>
+            <RowDefinition Height="3" />
+            <RowDefinition Height="350" />
+        </Grid.RowDefinitions>
+        <GridSplitter Grid.Row="1"  Grid.Column="1" Width="100" HorizontalAlignment="Stretch"  />
+        <DataGrid HorizontalAlignment="Left" Grid.Row="0"  VerticalAlignment="Top" x:Name="SalesGrid" />
+        <Grid Margin="0,0,0,0" Grid.Row="2" VerticalAlignment="Top">
+                       
+            <Label Content="Location Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,40,0,0"  />
+            <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="118,40,0,0" x:Name="txtLocationName" RenderTransformOrigin="0.515,1.205"  />
+            
+            <Label Content="Sales Person" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="31,70,0,0" />
+            <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="118,70,0,0" x:Name="txtSalesPerson"  />
+
+            <Label Content="Total Sales" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,100,0,0"  />
+            <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="118,100,0,0" x:Name="txtTotalSales"  />
+
+
+            <Label Content="Product" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="400,40,0,0" Width="82" />
+            <ComboBox x:Name="cmbProduct"  ItemsSource="{Binding Path=Products}" SelectedValue="{Binding Path=_Product}" 
+                      DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="480,40,0,0" VerticalAlignment="Top" Width="120"/>
+
+            <Label Content="Currency" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="400,70,0,0" Width="82" />
+            <ComboBox x:Name="cmbCurrency"  ItemsSource="{Binding Path=Currency}" SelectedValue="{Binding Path=_Currency}" 
+                      DisplayMemberPath="currency" HorizontalAlignment="Left" Margin="480,70,0,0" VerticalAlignment="Top" Width="120"/>
+
+            <Button Content="Add New Sale" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" x:Name="btnAdd" Click="btnAdd_Click" Margin="567,130,0,0" Height="Auto"/>
+            <GroupBox Header="Add Sale" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Height="150" Width="688"/>
+
+
+        </Grid>
+
+    </Grid>
+</Window>
